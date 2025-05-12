@@ -1,0 +1,27 @@
+<!-- problem statement :-  Create a small program where a user enters username and password. If both match a pre-defined list, print "Login successful" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let username = "Archit"
+        let pass = "@rchit"
+
+        let inputUsername = prompt("Enter the username:")
+        let inputPass = prompt("Enter the password:")
+
+        if (username == inputUsername && pass == inputPass) {
+            document.write(`${username} wellcome to class`)
+        } else {
+            document.write("Invalid username or password.")
+        }
+
+    </script>
+</body>
+</html>

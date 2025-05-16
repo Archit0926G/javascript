@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+</head>
+<body>
+    <div id="header" class="divOne">
+        <h1 >wellcome to learning Selector <span style="display: none;">test text</span></h1>
+        <h2>two</h2>
+        <h3>three</h3>
+        <P>Lorem ipsum dolor sit amet.</P>
+        <input type="password">hello
+
+        <ul>
+            <li class="items">one</li>
+            <li class="items">two</li>
+            <li class="items">three</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+                    <!-- Dom  Selector -->
+
+                <!-- 
+                    
+                -> document.getElementById("header")  
+                    -return that id which have id = "header"
+
+                -> document.getElementById("header").className
+                    -return that div's class name
+                
+                -> document.getElementById("header").getAttribute("id/class/style")
+                    -return value of that attribute
+
+                -> document.getElementById("header").setAttribute("class", "test")
+                    - this query set class attribute and if it alreay setd so it overrid it
+                
+                -> const attributeInvar = document.getElementById("header")
+                -> attributeInvar.style.backgroundColor = "red"
+                -> attributeInvar.style.padding = "15pxs" 
+
+                -> attributeInvar.innerText => it return only visible content 
+                -> attributeInvar.textContent => it return all content without any attribute
+                -> attributeInvar.innerHTMl => ir return  all content with HTML tags
+                
+                -> document.querySelector("h1")
+                    - it return only first h1 tag from code
+                
+                -> document.querySelector("#header")
+                    - it return that id which name we use in query
+
+                -> document.querySelector(".divOne")
+                    - it return that class which name we use in query    
+                    
+                -> const myUl = document.querySelector("ul")
+                -> const myLi = document.querySelector("li")
+                -> myLi.style.backgroundColor = "green" 
+
+                -> document.querySelectorAll("li")
+                    - it give all li tags as nodelist
+
+                -> const list = document.querySelectorAll("li")
+                    list.forEach((li)=>{
+                        li.style.backgroundColor = "green"
+                    })
+
+                -> const class = document.getElementsByClassName("item")
+                    - it return all class which name is "ltem" as HTMLcollection 
+                
+                we need to convert HTLMcollecatin into array to apply diff method
+                HTMLcollecatin => array
+                -> Array.from(class)
+                
+                
+                
+                
+                -->

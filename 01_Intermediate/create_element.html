@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element</title>
+</head>
+<body>
+    <div class="Parent">
+        <div class="counter">one</div>
+        <div class="counter">two</div>
+        <div class="counter">three</div>
+        <div class="counter">four</div>
+        <div class="counter">five</div>
+    </div>
+</body>
+<script>
+
+    const parent = document.querySelector(".Parent")
+    console.log(parent)
+    console.log(parent.children)
+    console.log(parent.children[0].innerText)
+
+    for(let i=0; i<parent.children.length; i++){
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = "pink"
+    parent.children[0].style.color = "red"
+
+    // console.log(parent.firstElementChild)
+    // console.log(parent.lastElementChild).innerHTML
+
+    const one = document.querySelector(".counter")
+    console.log(one.parentElement)
+    console.log(one.nextElementSibling)
+
+    console.log("NODES: ", parent.childNodes)
+
+</script>
+</html>

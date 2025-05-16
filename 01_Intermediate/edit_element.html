@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element</title>
+</head>
+<body>
+     <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+                            // add element
+
+
+    // it is not optimiz way to do this
+    function addlanguage(language){
+        const li = document.createElement("li")
+        li.innerHTML = `${language}`
+        document.querySelector(".language").appendChild(li)
+    }
+    addlanguage("python")
+
+    // it is optimiz way to do this
+    function addoptimizlanguage(lang){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector(".language").appendChild(li)
+    }
+    addoptimizlanguage("java")
+
+                            // edit element
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+
+    secondLang.innerHTML="c++"    // first way
+
+    const newLi= document.createElement("li")    // second way 
+    newLi.textContent="HTML"
+    secondLang.replaceWith(newLi)
+
+    newLi.outerHTML= "<li>typescript</li>"  // third way 
+    // hear we use newLi insted of secondLang because we replace secondLand with newLi
+
+
+
+                            // remove element 
+
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+
+</script>
+</html>

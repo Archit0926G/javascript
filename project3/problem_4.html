@@ -1,0 +1,77 @@
+<!-- guess the number -A simple game where the user guesses a random number between 1 and 100, and gets hints like "too high" or "too low". -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess the number</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: aqua;
+            color: gray;
+        }
+
+        #box{
+            border-radius: 20px;
+            height: 500px;
+            width: 500px;
+            text-align: center;
+            justify-content: center;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <h1>Guess The Number Game</h1>
+    <h2>Guess the number between 1 to 100</h2>
+    <h4>you have to guess number in 10 trys</h4>
+    <input type="number" placeholder="Enter Number" id="input" >
+    <button id="chack">chack</button>
+    <h3 id="lowOrHi">your guess is low</h3>
+    <h3 id="remaining">remaining guess : 10</h3>
+    </div>
+</body>
+<script>
+    const randomNum =parseInt(( Math.random() * 100 ) + 1)
+    console.log(randomNum)
+    
+    let input = document.getElementById('input')
+    let lowOrHi = document.getElementById('lowOrHi')
+    let remaining = document.getElementById('remaining')
+    let button = document.getElementById('chack')
+    let attempts = 10
+
+    button.addEventListener('click' , function(){
+
+    const guess = parseInt(input.value)
+
+    if (guess > 100) {
+        lowOrHi.innerText = "Enter velid number between 1 to 100"
+    }
+    else if(guess < 1){
+        lowOrHi.innerText = "Enter velid number between 1 to 100"
+    }
+    else if(guess > randomNum){
+        lowOrHi.innerText = "your guess is 'highhh'"
+    }
+    else if(guess < randomNum){
+        lowOrHi.innerText = "your guess is 'lowww'"
+    }
+    else if(guess == randomNum){
+        lowOrHi.innerText = "your guess in Right !! you Win"
+    }
+
+    attempts--
+    remaining.innerText = "remaining guess : " + attempts
+
+    })
+
+    
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!-- text editor - A basic editor where users can type text and style it (bold, italic, underline, etc.). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <style>
+
+      body {
+      background-color: aqua;
+      color: gray;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .editor {
+      margin-bottom: 10px;
+    }
+
+    .editor button {
+      font-size: 16px;
+      margin: 5px;
+      padding: 5px 10px;
+    }
+
+    #input {
+      width: 80%;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: aqua;
+      color: black;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Enter Your text and edit</h1>
+    <div class="editor">
+        <button id="bold">B</button>
+        <button id="italic">I</button>
+        <button id="underline">U</button>
+    </div>
+
+    <div id="input" contenteditable="true" placeholder="type here">
+    </div>    
+</body>
+<script>
+
+    document.getElementById('bold').addEventListener('click' , function(){
+        document.execCommand('bold')
+    })
+
+    document.getElementById('italic').addEventListener('click' , function(){
+        document.execCommand('italic')
+    })
+
+    document.getElementById('underline').addEventListener('click' , function(){
+        document.execCommand('underline')
+    })
+
+
+</script>
+</html>

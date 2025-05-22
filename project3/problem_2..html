@@ -1,0 +1,41 @@
+<!-- BMI generator-A calculator where users input height and weight, and it shows their Body Mass Index (BMI) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI generator</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI calculator</h1>
+    <input type="text" class="weight" placeholder="enter weigth in kg">
+    <input type="text" class="height" placeholder="enter height in meters">
+    <br>
+    <br>
+    <button id="calculate">calculate</button>
+    <br>
+    <br>
+    <output id="result"></output>
+    
+</body>
+<script>
+
+    document.getElementById('calculate').addEventListener('click' , function(){
+
+    const weight = parseFloat(document.querySelector(".weight").value)
+    const height = parseFloat(document.querySelector(".height").value)
+
+    let ans = (weight /(height*height)).toFixed(2)
+
+    document.getElementById("result").innerText = "BMI : " + ans
+
+    })
+</script>
+</html>

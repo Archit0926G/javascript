@@ -1,0 +1,67 @@
+<!-- color changer- A simple tool that changes the background or text color when you click a button. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+    <style>
+        body{
+            color: black ;
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        #red{
+        background-color: red;
+       }
+
+       #pink{
+        background-color: pink;
+       }
+
+       #yellow{
+        background-color: yellow;
+       }
+
+       #green{
+        background-color: green;
+       }
+    </style>
+</head>
+<body>
+    <h1>i want to chang color into ....</h1>
+    <div>
+        <button class="button" id="red">red</button>
+        <button class="button" id="yellow">yellow</button>
+        <button class="button" id="pink">pink</button>
+        <button class="button" id="green">green</button>
+    </div>
+    <h2>click here to chang bg color</h2>
+</body>
+<script>
+    const button = document.querySelectorAll(".button")
+    const body = document.querySelector("body")
+
+    button.forEach(function(button){
+        button.addEventListener('click' , function(e){
+            switch (e.target.id) {
+                case "red":
+                    body.style.backgroundColor = 'red'
+                break;
+                case "pink":
+                    body.style.backgroundColor = 'pink'
+                break;
+                case "yellow":
+                    body.style.backgroundColor = 'yellow'
+                break;
+                case "green":
+                    body.style.backgroundColor = 'green'
+                break;
+                
+            }
+        })
+    })
+</script>
+</html>

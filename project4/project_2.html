@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Book Search</title>
+  
+</head>
+<body>
+
+  <h2> Search book here </h2>
+  <input type="text" id="searchInput" placeholder="Type book name..." />
+  <div id="results"></div>
+
+  <script>
+    class BookSearch {
+      constructor() {
+        this.input = document.getElementById("searchInput")
+        this.resultsBox = document.getElementById("results")
+        this.timer = null
+
+        this.input.addEventListener("input", () => this.debounceSearch())
+      }
+
+      debounceSearch() {
+        clearTimeout(this.timer)
+        this.timer = setTimeout(() => this.searchBooks(), 300)
+      }
+
+      async searchBooks() {
+        const query = this.input.value
+        const url = `https://openlibrary.org/search.json?q=QUERY`
+        const res = await fetch(url)
+        const data = await res.json()
+
+        this.showResults(data.docs.slice(0, 10))
+      }
+
+      showResults(books) {
+        this.resultsBox.innerHTML = ""
+        books.forEach(book => {
+          
+          resultsBox.className = "book"
+          resultsBox.innerHTML = ` ${book.title} - ${book.author_name}`
+        //   this.resultsBox.appendChild(div)
+        })
+      }
+    }
+
+    new BookSearch()
+  </script>
+
+</body>
+</html>

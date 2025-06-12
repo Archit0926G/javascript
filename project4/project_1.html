@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joke studio</title>
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #f0f8ff;
+        font-family: Arial, sans-serif;
+    }
+
+    .main {
+        text-align: center;
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-top: 15px;
+        font-size: 16px;
+        background-color: #1a8cff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0070cc;
+    }
+
+    .joke {
+        margin-top: 25px;
+        font-size: 18px;
+        color: #333;
+        font-style: italic;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Click here to get joke</h1>
+        <button class="btn">Click Me</button>
+        <h3 class="joke">Hello User</h3>
+    </div>
+</body>
+<script>
+    let button = document.querySelector('.btn')
+    let jokeBox = document.querySelector('.joke')
+
+    button.addEventListener('click' , function(){
+        fetch('https://icanhazdadjoke.com/' , 
+                { 
+                headers : 
+                {Accept: 'application/json'}
+                }
+        )
+
+        .then((response) => {return response.json()})
+        .then((data) => {jokeBox.textContent = data.joke})
+        .catch((err) => jokeBox.textContent = "error ! plz chack your network")
+
+    })
+    
+</script>
+</html>

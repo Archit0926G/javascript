@@ -1,11 +1,11 @@
-const api = "https://api.github.com/users/";
-const infoBox = document.querySelector(".userInfo");
-const input = document.querySelector("input");
+const api = "https://api.github.com/users/"
+const infoBox = document.querySelector(".userInfo")
+const input = document.querySelector("input")
 
 const getUserInfo = async (username) => {
   try {
-    const response = await fetch(api + username);
-    if (!response.ok) throw new Error("User not found");
+    const response = await fetch(api + username)
+    if (!response.ok) throw new Error("User not found")
     
     const data = await response.json();
 
@@ -30,7 +30,7 @@ const getUserInfo = async (username) => {
           </a>
         </div>
       </div>
-    `;
+    `
 
     infoBox.innerHTML = userCard;
   } catch (err) {
@@ -38,19 +38,19 @@ const getUserInfo = async (username) => {
       <div class="bg-white p-6 rounded shadow text-center text-red-600">
         User not found. Please try again.
       </div>
-    `;
+    `
   }
-};
+}
 
 const handleSearch = () => {
   const username = input.value.trim();
   if (username) {
-    getUserInfo(username);
+    getUserInfo(username)
   }
 };
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    handleSearch();
+    handleSearch()
   }
-});
+})
